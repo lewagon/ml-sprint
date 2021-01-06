@@ -3,7 +3,8 @@ FROM jupyter/base-notebook:notebook-6.0.0
 RUN pip install pandas numpy seaborn sklearn jupyter-offlinenotebook
 
 # ./work is found inside official jupyter images, we avoid unnecessary nesting
-RUN rm -rf ./work
+# RUN rm -rf ./work
+# commenting out above line as it crashes the MyBinder build
 
 RUN mkdir data
 COPY --chown=1000:100 clean_data/salaries.csv clean_data
