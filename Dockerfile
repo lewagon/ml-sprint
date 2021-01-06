@@ -6,11 +6,12 @@ RUN pip install pandas numpy seaborn sklearn jupyter-offlinenotebook
 # RUN rm -rf ./work
 # commenting out above line as it crashes the MyBinder build
 
-RUN mkdir data
+RUN mkdir clean_data
+RUN mkdir raw_data
 COPY --chown=1000:100 clean_data/salaries.csv clean_data
 COPY --chown=1000:100 clean_data/churn.csv clean_data
 COPY --chown=1000:100 raw_data/raw_churn.csv raw_data
 COPY --chown=1000:100 raw_data/raw_salaries.csv raw_data
-COPY --chown=1000:100 ./Instructor\ Livecode.ipynb .
-COPY --chown=1000:100 ./2.\ KNN\ -\ Customer\ Churn.ipynb .
-COPY --chown=1000:100 ./1.\ Linear\ Regression\ -\ Salary\ Predictions.ipynb .
+COPY --chown=1000:100 ["./Instructor Livecode.ipynb", "."]
+COPY --chown=1000:100 ["./2. KNN - Customer Churn.ipynb", "."]
+COPY --chown=1000:100 ["./1. Linear Regression - Salary Predictions.ipynb", "."]
