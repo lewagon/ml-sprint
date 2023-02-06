@@ -1,6 +1,6 @@
 FROM jupyter/base-notebook:notebook-6.0.0
 
-RUN pip install pandas numpy seaborn sklearn jupyter-offlinenotebook
+RUN pip install pandas numpy seaborn scikit-learn jupyter-offlinenotebook
 
 RUN mkdir clean_data
 RUN mkdir raw_data
